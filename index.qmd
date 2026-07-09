@@ -1,7 +1,25 @@
 ---
-title: "Template"
+title: "Cartographie Eoliennes"
 ---
 
-This is a Quarto website.
+C'est ici que devrait venir un text un peu cool :) 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{r, echo=FALSE,include=FALSE}
+library(sf)
+library(leaflet)
+library(sp)
+
+```
+
+```{r, echo=FALSE}
+
+leaflet(width = "100%") %>%
+  addTiles() 
+
+```
+
+<!-- %>%
+  addPolygons(data = map,
+              fill =  cols, weight=2,col = 'grey',
+              fillColor = cols,fillOpacity = op,
+                  highlightOptions = highlightOptions(color='white',weight=3,bringToFront = TRUE)) -->
