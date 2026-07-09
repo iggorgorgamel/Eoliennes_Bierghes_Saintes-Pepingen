@@ -7,6 +7,11 @@ library(sp)
 library(quarto)
 
 
+##### Eol position
+
+eols <- read.csv("data/eol_pos.csv",sep=";")
+
+
 # source of data
 # https://finances.belgium.be/fr/experts-partenaires/donnees-ouvertes-patrimoine/jeux-donnees/portail-telechargement
 # descirption of data
@@ -230,4 +235,4 @@ library(quarto)
 # #               fillColor = cols,fillOpacity = op,
 # #                   highlightOptions = highlightOptions(color='white',weight=3,
 # #                                     bringToFront = TRUE))
-# save.image("wd.RData")
+save.image("wd.RData")
