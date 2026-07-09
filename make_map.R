@@ -15,12 +15,12 @@ eols <- read.csv("data/eol_pos.csv",sep=";")
 #  make map
 #  read shape
 # https://www.atlas-belgique.be/index.php/fr/ressources/donnees-cartographiques/
- map <- st_read(dsn = "data/communes_L08/",layer = "Commune-2025-01-01")
+ muns <- st_read(dsn = "data/communes_L08/",layer = "Commune-2025-01-01")
  # project
- map <- st_transform(map, CRS("+proj=longlat +datum=WGS84"))
+ muns <- st_transform(map, CRS("+proj=longlat +datum=WGS84"))
 
 
-map$codgeo %in% c(1430,)
+ muns<-map[map$libgeo_fr %in% c("Rebecq","Tubize","Pepingen"),]
 
 runif(1)
 
