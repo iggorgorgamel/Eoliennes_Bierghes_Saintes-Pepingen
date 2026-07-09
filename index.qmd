@@ -40,16 +40,65 @@ leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25
               fillColor = c("orange","green","blue"),fillOpacity = 0.2,
               highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
               group = "Communes") %>%
-     addPolygons(data = buf_4,
-              fill =  "rose", weight=1,col = "yellow",
-              fillColor = c("orange","green","blue"),fillOpacity = 0.2,
+
+    addPolygons(data = buf_8_1,
+              fill =  "green", weight=1,col = "black",
+              fillColor = c("green"),fillOpacity = 0.5,
               highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
-              group = "Buffer 400m") %>%
+              group = "Buffer 800m_1") %>%
+    addPolygons(data = buf_8_2,
+              fill =  "green", weight=1,col = "black",
+              fillColor = c("green"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 800m_2") %>%
+    addPolygons(data = buf_8_3,
+              fill =  "green", weight=1,col = "black",
+              fillColor = c("green"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 800m_3") %>%
+    addPolygons(data = buf_6_1,
+              fill =  "orange", weight=1,col = "black",
+              fillColor = c("orange"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 600m_1") %>%
+    addPolygons(data = buf_6_2,
+              fill =  "orange", weight=1,col = "black",
+              fillColor = c("orange"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 600m_2") %>%
+    addPolygons(data = buf_6_3,
+              fill =  "orange", weight=1,col = "black",
+              fillColor = c("orange"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 600m_3") %>%
+
+    addPolygons(data = buf_4_1,
+              fill =  "red", weight=1,col = "black",
+              fillColor = c("red"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 400m_1") %>%
+    addPolygons(data = buf_4_2,
+              fill =  "red", weight=1,col = "black",
+              fillColor = c("red"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 400m_2") %>%
+    addPolygons(data = buf_4_3,
+              fill =  "red", weight=1,col = "black",
+              fillColor = c("red"),fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 400m_3") %>%
+
+    
+
+
 
     addAwesomeMarkers(lng = eols$long, lat = eols$lat, label = eols$label,group = "Eoliennes",icon = icon_eol)%>%
     addLayersControl(
     baseGroups = c("OSM","ESRI"),
-    overlayGroups = c("Eoliennes","Communes","Buffer 400m"),
+    overlayGroups = c("Eoliennes","Communes",
+                        "Buffer 400m_1","Buffer 600m_1","Buffer 800m_1",
+                        "Buffer 400m_2","Buffer 600m_2","Buffer 800m_2",
+                        "Buffer 400m_3","Buffer 600m_3","Buffer 800m_3"),
     options = layersControlOptions(collapsed = FALSE),
     position = "topright"
   )
