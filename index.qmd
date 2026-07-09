@@ -23,7 +23,7 @@ load("wd.RData")
 }
 </style>
 
-```{r, echo=FALSE'}
+```{r, echo=FALSE}
 
 icon_eol  <- makeAwesomeIcon(icon = 'bolt', markerColor = 'orange', library='fa', iconColor = 'black')
 
