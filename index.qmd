@@ -28,7 +28,7 @@ load("wd.RData")
 icon_eol  <- makeAwesomeIcon(icon = 'bolt', markerColor = 'orange', library='fa', iconColor = 'black')
 
 
-
+# make leaflet map with municipalities
 leaflet(width = "5000px",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
   htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'bottomleft' }).addTo(this)
@@ -52,9 +52,3 @@ leaflet(width = "5000px",options = leafletOptions(zoomControl = FALSE,maxZoom = 
   )
 
 ```
-
-<!-- %>%
-  addPolygons(data = map,
-              fill =  cols, weight=2,col = 'grey',
-              fillColor = cols,fillOpacity = op,
-                  highlightOptions = highlightOptions(color='white',weight=3,bringToFront = TRUE)) -->
