@@ -43,7 +43,6 @@ leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25
               group = "Communes") %>%
 
     addAwesomeMarkers(lng = eols$long, lat = eols$lat, label = eols$label,group = "Eoliennes",icon = icon_eol)%>%
-
     addLayersControl(
     baseGroups = c("OSM","ESRI"),
     overlayGroups = c("Eoliennes","Communes"),
