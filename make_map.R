@@ -23,16 +23,11 @@ long_center<-sum(eols$long)/3
  muns <- st_read(dsn = "data/communes_L08/",layer = "Commune-2025-01-01")
  # project
  muns <- st_transform(map, CRS("+proj=longlat +datum=WGS84"))
-
-
+# select only 3 municipalities
  muns<-map[map$libgeo_fr %in% c("Rebecq","Tubize","Pepingen"),]
+# ################################################################################
 
-runif(1)
-
-# source of data
-# https://finances.belgium.be/fr/experts-partenaires/donnees-ouvertes-patrimoine/jeux-donnees/portail-telechargement
-# descirption of data
-# https://opendata.fin.belgium.be/download/TechnicalSpecifications/PP-FiscSit_20230101_TechSpec_FR.pdf
+# compute buffer around the three points
 
 
 # ################################################################################

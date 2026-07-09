@@ -29,11 +29,11 @@ icon_eol  <- makeAwesomeIcon(icon = 'bolt', markerColor = 'orange', library='fa'
 
 
 # make leaflet map with municipalities
-leaflet(width = "5000px",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
+leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
   htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'bottomleft' }).addTo(this)
     }") %>%
-  setView(lng = long_center, lat = lat_center, zoom = 12)
+  setView(lng = long_center, lat = lat_center, zoom = 12)%>%
   addTiles(group = "OSM") %>%
   addProviderTiles(providers$"Esri.WorldImagery",group = "ESRI")%>%
   addPolygons(data = muns,
