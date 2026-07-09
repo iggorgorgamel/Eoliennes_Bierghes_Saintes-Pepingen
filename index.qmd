@@ -27,7 +27,6 @@ load("wd.RData")
 
 icon_eol  <- makeAwesomeIcon(icon = 'bolt', markerColor = 'orange', library='fa', iconColor = 'black')
 
-
 # make leaflet map with municipalities
 leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
   htmlwidgets::onRender("function(el, x) {
