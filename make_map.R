@@ -29,6 +29,14 @@ long_center<-sum(eols$long)/3
 
 # compute buffer around the three points
 
+# 1. Create a spatial point and set it to a projected CRS (e.g., EPSG: 3857 in meters)
+pt <- st_sfc(st_point(c(eols$long[1], eols$lat[1])), crs = 3812)
+pt_projected <- st_transform(pt, crs = 3812)
+# 2. Create a 400-meter buffer around the point
+buf_4 <- st_buffer(pt_projected, dist = 400)
+
+# 3. View the result
+
 
 # ################################################################################
 # # make map

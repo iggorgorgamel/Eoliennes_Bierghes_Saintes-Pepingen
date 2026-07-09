@@ -40,11 +40,16 @@ leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25
               fillColor = c("orange","green","blue"),fillOpacity = 0.2,
               highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
               group = "Communes") %>%
+     addPolygons(data = buf_4,
+              fill =  "rose", weight=1,col = "yellow",
+              fillColor = c("orange","green","blue"),fillOpacity = 0.2,
+              highlightOptions = highlightOptions(color='grey',weight=3,bringToFront = TRUE),
+              group = "Buffer 400m") %>%
 
     addAwesomeMarkers(lng = eols$long, lat = eols$lat, label = eols$label,group = "Eoliennes",icon = icon_eol)%>%
     addLayersControl(
     baseGroups = c("OSM","ESRI"),
-    overlayGroups = c("Eoliennes","Communes"),
+    overlayGroups = c("Eoliennes","Communes","Buffer 400m"),
     options = layersControlOptions(collapsed = FALSE),
     position = "topright"
   )
