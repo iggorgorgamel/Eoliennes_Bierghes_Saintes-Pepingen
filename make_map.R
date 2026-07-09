@@ -11,6 +11,11 @@ library(quarto)
 
 eols <- read.csv("data/eol_pos.csv",sep=";")
 
+# center eol
+
+lat_center<-sum(eols$lat)/3
+long_center<-sum(eols$long)/3
+
 # ################################################################################
 #  make map
 #  read shape

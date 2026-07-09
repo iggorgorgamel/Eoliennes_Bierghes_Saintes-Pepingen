@@ -33,6 +33,7 @@ leaflet(width = "5000px",options = leafletOptions(zoomControl = FALSE,maxZoom = 
   htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'bottomleft' }).addTo(this)
     }") %>%
+  setView(lng = long_center, lat = lat_center.3601, zoom = 12)
   addTiles(group = "OSM") %>%
   addProviderTiles(providers$"Esri.WorldImagery",group = "ESRI")%>%
   addPolygons(data = muns,
