@@ -99,7 +99,7 @@ leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25
                         "Buffer 400m_1","Buffer 600m_1","Buffer 800m_1",
                         "Buffer 400m_2","Buffer 600m_2","Buffer 800m_2",
                         "Buffer 400m_3","Buffer 600m_3","Buffer 800m_3"),
-    options = layersControlOptions(collapsed = FALSE),
+    options = layersControlOptions(collapsed = TRUE),
     position = "topright"
   )
 
