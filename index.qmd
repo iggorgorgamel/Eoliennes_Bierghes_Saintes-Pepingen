@@ -17,13 +17,19 @@ load("wd.RData")
 
 ```
 
-```{r, echo=FALSE, out.width='1textwidth'}
+<style>
+.html-widget {
+    margin: auto;
+}
+</style>
+
+```{r, echo=FALSE'}
 
 icon_eol  <- makeAwesomeIcon(icon = 'bolt', markerColor = 'orange', library='fa', iconColor = 'black')
 
 
 
-leaflet(width = "100%",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
+leaflet(width = "5000px",options = leafletOptions(zoomControl = FALSE,maxZoom = 25)) %>%
   htmlwidgets::onRender("function(el, x) {
         L.control.zoom({ position: 'bottomleft' }).addTo(this)
     }") %>%
